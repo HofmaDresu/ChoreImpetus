@@ -35,9 +35,16 @@ namespace ChoreImpetus.Core.Android
 		{
 			var chore = GetChore (id);
 			var nextDueDate = CalculateNextDueDate (chore);
+			var completed = new CompletedChore(chore, DateTime.Now);
+			ChoreRepository.SaveCompletedChore(completed);
 
-
-			throw new Exception("Method not yet implemented");
+			if (nextDueDate.HasValue) {
+				chore.DueDate = nextDueDate.Value;
+				return SaveChore(chore);
+			}
+			else {
+				return DeleteChore(id);
+			}
 		}
 
 		private static DateTime? CalculateNextDueDate(Chore c)

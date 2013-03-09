@@ -9,11 +9,11 @@ namespace ChoreImpetus.Core.Android.DatabaseObjects
 		{
 		}
 
-		public CompletedChore (Chore c, DateTime? completionDate, string completedBy)
+		public CompletedChore (Chore c, DateTime? completionDate = null, string completedBy = "")
 		{
 			ChoreName = c.ChoreName;
 			CompletionDate = completionDate.GetValueOrDefault (DateTime.Now);
-			CompletedBy = completedBy ?? String.Empty;
+			CompletedBy = completedBy;
 			ParentChoreId = c.ID;
 		}
 		
