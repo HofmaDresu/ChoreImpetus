@@ -38,7 +38,7 @@ namespace ChoreImpetus.Core.Android
 			var completed = new CompletedChore(chore, DateTime.Now);
 			ChoreRepository.SaveCompletedChore(completed);
 
-			if (nextDueDate.HasValue) {
+			if (nextDueDate.HasValue && nextDueDate.Value <= chore.ChoreRecurrence.EndDate) {
 				chore.DueDate = nextDueDate.Value;
 				return SaveChore(chore);
 			}
@@ -83,8 +83,6 @@ namespace ChoreImpetus.Core.Android
 					}
 					break;
 			}
-
-
 
 			return nextDate;
 		}
