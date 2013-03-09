@@ -14,11 +14,13 @@ namespace ChoreImpetus.Core.Android.DatabaseObjects
 			ChoreName = c.ChoreName;
 			CompletionDate = completionDate.GetValueOrDefault (DateTime.Now);
 			CompletedBy = completedBy ?? String.Empty;
+			ParentChoreId = c.ID;
 		}
 		
 		[PrimaryKey, AutoIncrement]
 		public int ID { get; set; }
 		public string ChoreName { get; set; }
+		public readonly int ParentChoreId;
 		public DateTime? CompletionDate { get; set; }
 		public string CompletedBy { get; set; }
 	}

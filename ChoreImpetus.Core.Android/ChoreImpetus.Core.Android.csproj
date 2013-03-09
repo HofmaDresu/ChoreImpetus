@@ -48,6 +48,7 @@
     <Folder Include="Contracts\" />
     <Folder Include="DataObjects\" />
     <Folder Include="Databases\" />
+    <Folder Include="Business Logic\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SQLite.cs" />
@@ -58,5 +59,6 @@
     <Compile Include="Databases\ChoreDatabase.cs" />
     <Compile Include="ChoreRepository.cs" />
     <Compile Include="DataObjects\CompletedChore.cs" />
+    <Compile Include="Business Logic\ChoreManager.cs" />
   </ItemGroup>
 </Project>

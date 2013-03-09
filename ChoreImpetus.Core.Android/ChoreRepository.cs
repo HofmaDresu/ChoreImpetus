@@ -3,6 +3,7 @@ using ChoreImpetus.Core.Android.Databases;
 using ChoreImpetus.Core.Android.DatabaseObjects;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace ChoreImpetus.Core.Android
 {
@@ -67,6 +68,21 @@ namespace ChoreImpetus.Core.Android
 		public static int DeleteChore(int id)
 		{
 			return me.db.DeleteItem<Chore>(id);
+		}
+		
+		public static CompletedChore GetCompletedChore(int id)
+		{
+			return me.db.GetItem<CompletedChore>(id);
+		}
+		
+		public static IEnumerable<CompletedChore> GetCompletedChore ()
+		{
+			return me.db.GetItems<CompletedChore>();
+		}
+
+		public static CompletedChore GetMostRecentCompletedChore(int choreId)
+		{
+			return me.db.GetItems<CompletedChore>().Where(cc => cc.ParentChoreId == choreId).OrderByDescending(cc => cc.CompletionDate).FirstOrDefault();
 		}
 
 		public static int SaveCompletedChore (CompletedChore item)
