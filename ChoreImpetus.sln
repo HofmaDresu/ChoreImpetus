@@ -21,6 +21,6 @@ Global
 		{18190ACC-C6C6-4F9E-9DAA-4623E5560125}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ChoreImpetus.Core.Android\ChoreImpetus.Core.Android.csproj
+		StartupItem = ChoreImpetusAndroid\ChoreImpetusAndroid.csproj
 	EndGlobalSection
 EndGlobal

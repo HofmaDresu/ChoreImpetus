@@ -3,7 +3,7 @@ using ChoreImpetus.Core.Android.DatabaseObjects;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ChoreImpetus.Core.Android
+namespace ChoreImpetus.Core.Android.BusinessLogic
 {
 	public static class ChoreManager
 	{

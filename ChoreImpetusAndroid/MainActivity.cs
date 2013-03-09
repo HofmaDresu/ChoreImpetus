@@ -7,13 +7,14 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+using ChoreImpetus.Core.Android.DatabaseObjects;
+using ChoreImpetus.Core.Android.BusinessLogic;
+
 namespace ChoreImpetusAndroid
 {
 	[Activity (Label = "ChoreImpetusAndroid", MainLauncher = true)]
 	public class Activity1 : Activity
 	{
-		int count = 1;
-
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
@@ -21,12 +22,15 @@ namespace ChoreImpetusAndroid
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
+			var chores = ChoreManager.GetChores ();
+
+			ListView choreList = FindViewById<ListView> (Resource.Id.ChoreList);
+
 			// Get our button from the layout resource,
 			// and attach an event to it
 			Button button = FindViewById<Button> (Resource.Id.myButton);
 			
 			button.Click += delegate {
-				button.Text = string.Format ("{0} clicks!", count++);
 			};
 		}
 	}

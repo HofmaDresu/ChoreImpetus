@@ -54,7 +54,10 @@ namespace ChoreImpetusAndroid
 		{
 			
 			// aapt resource value: 0x7f060000
-			public const int myButton = 2131099648;
+			public const int ChoreList = 2131099648;
+			
+			// aapt resource value: 0x7f060001
+			public const int myButton = 2131099649;
 			
 			private Id()
 			{
@@ -82,7 +85,7 @@ namespace ChoreImpetusAndroid
 			public const int app_name = 2130968577;
 			
 			// aapt resource value: 0x7f040000
-			public const int hello = 2130968576;
+			public const int create = 2130968576;
 			
 			private String()
 			{
