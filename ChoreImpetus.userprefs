@@ -1,15 +1,37 @@
 ﻿<Properties GitUserInfo="UsingMD">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ChoreImpetus.Core.Android\DataObjects\Chore.cs">
     <Files>
-      <File FileName="ChoreImpetusAndroid\MainActivity.cs" Line="1" Column="1" />
-      <File FileName="ChoreImpetusAndroid\Adapters\ChoreListAdapter.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\HofmaDresu\Documents\GitHub\ChoreImpetus\ChoreImpetus.Core.Android\SQLite.cs" Line="1346" Column="2" />
+      <File FileName="ChoreImpetus.Core.Android\DataObjects\Recurrence.cs" Line="1" Column="1" />
+      <File FileName="ChoreImpetus.Core.Android\DataObjects\Chore.cs" Line="15" Column="50" />
+      <File FileName="ChoreImpetus.Core.Android\Databases\ChoreDatabase.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="ChoreImpetus.Core.Android" expanded="True">
+            <Node name="BusinessLogic" expanded="True" />
+            <Node name="Databases" expanded="True" />
+            <Node name="DataObjects" expanded="True">
+              <Node name="Chore.cs" selected="True" />
+            </Node>
+          </Node>
+          <Node name="ChoreImpetusAndroid" expanded="True">
+            <Node name="Adapters" expanded="True" />
+            <Node name="Resources" expanded="True">
+              <Node name="layout" expanded="True" />
+              <Node name="values" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ChoreImpetusAndroid MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" AndroidDeviceId-Debug="emulator-5554" />
   <MonoDevelop.Ide.ItemProperties.ChoreImpetus.Core.Android AndroidDeviceId-Debug="emulator-5554" />
-  <MonoDevelop.Ide.ItemProperties.ChoreImpetusAndroid MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" />
 </Properties>

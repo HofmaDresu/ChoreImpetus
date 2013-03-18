@@ -53,11 +53,17 @@ namespace ChoreImpetusAndroid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int ChoreList = 2131099648;
+			// aapt resource value: 0x7f060002
+			public const int ChoreList = 2131099650;
 			
 			// aapt resource value: 0x7f060001
-			public const int myButton = 2131099649;
+			public const int dueDate = 2131099649;
+			
+			// aapt resource value: 0x7f060003
+			public const int myButton = 2131099651;
+			
+			// aapt resource value: 0x7f060000
+			public const int name = 2131099648;
 			
 			private Id()
 			{
@@ -68,10 +74,13 @@ namespace ChoreImpetusAndroid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int ChoreListItem = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int monoandroidsplash = 2130903041;
+			public const int Main = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int monoandroidsplash = 2130903042;
 			
 			private Layout()
 			{

@@ -19,9 +19,9 @@ namespace ChoreImpetus.Core.Android.Databases
 		public ChoreDatabase (string path) : base (path)
 		{
 			// create the tables
+			CreateTable<Recurrence> ();
 			CreateTable<Chore> ();
 			CreateTable<CompletedChore> ();
-			CreateTable<Recurrence> ();
 		}
 		
 		public IEnumerable<T> GetItems<T> () where T : Contracts.IDatabaseEntity, new ()

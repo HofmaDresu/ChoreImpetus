@@ -13,7 +13,7 @@ namespace ChoreImpetus.Core.Android.DatabaseObjects
 		[PrimaryKey, AutoIncrement]
 		public int ID { get; set; }
 		public RecurrencePattern Pattern { get; set; }
-		public IList<DayOfWeek> DaysOfWeek { get; set; }
+		//public IList<DayOfWeek> DaysOfWeek { get; set; }
 		public DateTime StartDate { get; set; }
 		public DateTime? EndDate { get; set; }
 	}
