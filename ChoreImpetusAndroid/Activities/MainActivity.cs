@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 using Android.App;
 using Android.Content;
@@ -10,7 +11,7 @@ using Android.OS;
 using ChoreImpetus.Core.Android.DatabaseObjects;
 using ChoreImpetus.Core.Android.BusinessLogic;
 
-namespace ChoreImpetusAndroid
+namespace ChoreImpetusAndroid.Activities
 {
 	[Activity (Label = "Chore Impetus", MainLauncher = true)]
 	public class MainActivity : Activity
@@ -24,8 +25,6 @@ namespace ChoreImpetusAndroid
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
-			var chores = ChoreManager.GetChores ();
-
 			ListView choreList = FindViewById<ListView> (Resource.Id.ChoreList);
 
 			choreList.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {};
@@ -35,12 +34,7 @@ namespace ChoreImpetusAndroid
 			Button button = FindViewById<Button> (Resource.Id.myButton);
 			
 			button.Click += (sender, e) => {
-				var c = new Chore() {
-					ChoreName = "Test Chore",
-					DueDate = DateTime.Now
-				};
-				ChoreManager.SaveChore(c);
-				RefreshChores();
+				StartActivity(typeof(CreateChore));
 			};
 		}
 
@@ -53,7 +47,7 @@ namespace ChoreImpetusAndroid
 
 		void RefreshChores()
 		{
-			choreAdapter = new Adapters.ChoreListAdapter (this, ChoreManager.GetChores ());
+			choreAdapter = new Adapters.ChoreListAdapter (this, ChoreManager.GetChores().OrderBy(c => c.DueDate));
 			ListView choreList = FindViewById<ListView> (Resource.Id.ChoreList);
 			choreList.Adapter = choreAdapter;
 		}

@@ -1,10 +1,12 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using Android.App;
 using Android.Widget;
 
 using ChoreImpetus.Core.Android.DatabaseObjects;
 using ChoreImpetus.Core.Android.BusinessLogic;
+using Android.Graphics;
 
 namespace ChoreImpetusAndroid.Adapters
 {
@@ -13,10 +15,10 @@ namespace ChoreImpetusAndroid.Adapters
 		protected Activity context = null;
 		protected IList<Chore> chores = new List<Chore>();
 		
-		public ChoreListAdapter (Activity context, IList<Chore> chores) : base ()
+		public ChoreListAdapter (Activity context, IEnumerable<Chore> chores) : base ()
 		{
 			this.context = context;
-			this.chores = chores;
+			this.chores = chores.ToList ();
 		}
 		
 		public override Chore this[int position]
@@ -49,13 +51,25 @@ namespace ChoreImpetusAndroid.Adapters
 				false)) as LinearLayout;
 			
 			// Find references to each subview in the list item's view
-			var txtName = view.FindViewById<TextView>(Resource.Id.name);
-			var txtDescription = view.FindViewById<TextView>(Resource.Id.dueDate);
+			var name = view.FindViewById<TextView>(Resource.Id.name);
+			var description = view.FindViewById<TextView>(Resource.Id.dueDate);
 			
 			//Assign item's values to the various subviews
-			txtName.SetText (item.ChoreName, TextView.BufferType.Normal);
-			txtDescription.SetText (item.DueDate.ToShortDateString(), TextView.BufferType.Normal);
-			
+			name.SetText (item.ChoreName, TextView.BufferType.Normal);
+			description.SetText (item.DueDate.ToShortDateString(), TextView.BufferType.Normal);
+
+			//Color if overdue
+			if (item.DueDate.Date < DateTime.Now.Date) {
+				name.SetTextColor(new Color(255, 0, 0));
+				description.SetTextColor(new Color(255, 0, 0));
+			}
+
+			//Color if Due Today
+			if (item.DueDate.Date == DateTime.Now.Date) {
+				name.SetTextColor(new Color(255, 165, 0));
+				description.SetTextColor(new Color(255, 165, 0));
+			}
+
 			//Finally return the view
 			return view;
 
