@@ -12,7 +12,7 @@ using ChoreImpetus.Core.Android.BusinessLogic;
 
 namespace ChoreImpetusAndroid
 {
-	[Activity (Label = "ChoreImpetusAndroid", MainLauncher = true)]
+	[Activity (Label = "Chore Impetus", MainLauncher = true)]
 	public class MainActivity : Activity
 	{
 		private Adapters.ChoreListAdapter choreAdapter;
