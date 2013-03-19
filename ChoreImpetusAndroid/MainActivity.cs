@@ -46,6 +46,8 @@ namespace ChoreImpetusAndroid
 
 		protected override void OnResume()
 		{
+			base.OnResume ();
+
 			RefreshChores();
 		}
 

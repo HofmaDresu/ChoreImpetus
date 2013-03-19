@@ -1,7 +1,9 @@
 using System;
 using ChoreImpetus.Core.Android.DatabaseObjects;
+using ChoreImpetus.Core.Android.Repositories;
 using System.Collections.Generic;
 using System.Linq;
+using RecurrenceImpetus.Core.Android.Repositories;
 
 namespace ChoreImpetus.Core.Android.BusinessLogic
 {
@@ -33,12 +35,13 @@ namespace ChoreImpetus.Core.Android.BusinessLogic
 
 		public static int CompleteChore(int id)
 		{
-			var chore = GetChore (id);
-			var nextDueDate = CalculateNextDueDate (chore);
+			var chore = GetChore(id);
+			var recurrence = RecurrenceRepository.GetRecurrence (chore.RecurrenceID);
+			var nextDueDate = CalculateNextDueDate (chore, recurrence);
 			var completed = new CompletedChore(chore, DateTime.Now);
 			ChoreRepository.SaveCompletedChore(completed);
 
-			if (nextDueDate.HasValue && nextDueDate.Value <= chore.ChoreRecurrence.EndDate) {
+			if (nextDueDate.HasValue && nextDueDate.Value <= recurrence.EndDate) {
 				chore.DueDate = nextDueDate.Value;
 				return SaveChore(chore);
 			}
@@ -47,10 +50,10 @@ namespace ChoreImpetus.Core.Android.BusinessLogic
 			}
 		}
 
-		private static DateTime? CalculateNextDueDate(Chore c)
+		private static DateTime? CalculateNextDueDate(Chore c, Recurrence r)
 		{
 			DateTime? nextDate = null;
-			switch (c.ChoreRecurrence.Pattern) 
+			switch (r.Pattern) 
 			{
 				case RecurrencePattern.Daily:
 					nextDate = c.DueDate;

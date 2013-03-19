@@ -49,6 +49,7 @@
     <Folder Include="DataObjects\" />
     <Folder Include="Databases\" />
     <Folder Include="BusinessLogic\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SQLite.cs" />
@@ -57,8 +58,11 @@
     <Compile Include="DataObjects\Chore.cs" />
     <Compile Include="DataObjects\Recurrence.cs" />
     <Compile Include="Databases\ChoreDatabase.cs" />
-    <Compile Include="ChoreRepository.cs" />
     <Compile Include="DataObjects\CompletedChore.cs" />
     <Compile Include="BusinessLogic\ChoreManager.cs" />
+    <Compile Include="BusinessLogic\RecurrenceManager.cs" />
+    <Compile Include="Repositories\ChoreRepository.cs" />
+    <Compile Include="Repositories\RecurrenceRepository.cs" />
+    <Compile Include="Repositories\BaseRepository.cs" />
   </ItemGroup>
 </Project>

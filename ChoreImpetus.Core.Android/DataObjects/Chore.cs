@@ -12,7 +12,7 @@ namespace ChoreImpetus.Core.Android.DatabaseObjects
 		[PrimaryKey, AutoIncrement]
 		public int ID { get; set; }
 		public string ChoreName { get; set; }
-		public Recurrence ChoreRecurrence { get; set; }
+		public int RecurrenceID { get; set; }
 		public DateTime DueDate { get; set; }
 	}
 }
