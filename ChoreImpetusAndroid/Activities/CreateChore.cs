@@ -39,7 +39,8 @@ namespace ChoreImpetusAndroid.Activities
 			recurrence.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs> (spinner_ItemSelected);
 			var array = Enum.GetValues(typeof(RecurrencePattern)).Cast<RecurrencePattern>();
 
-			var adapter = new ArrayAdapter<RecurrencePattern>(this, Resource.String.app_name, array.ToList<RecurrencePattern>());
+			var adapter = new ArrayAdapter<RecurrencePattern>(this, Android.Resource.Layout.SimpleSpinnerItem, array.ToList<RecurrencePattern>());
+			adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
 
 				
 			recurrence.Adapter = adapter;
