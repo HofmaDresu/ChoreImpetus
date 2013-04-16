@@ -30,6 +30,19 @@ namespace ChoreImpetusAndroid.Activities
 			dueDate.Click += (sender, e) => { ShowDialog (DATE_DIALOG_ID); };
 			dueDate.Touch += (sender, e) => { ShowDialog (DATE_DIALOG_ID); };
 
+			var endDate = FindViewById<EditText>(Resource.Id.DueDateInput);
+			endDate.Click += (sender, e) => { ShowDialog (DATE_DIALOG_ID); };
+			endDate.Touch += (sender, e) => { ShowDialog (DATE_DIALOG_ID); };
+
+
+			var recurrence = FindViewById<Spinner>(Resource.Id.RecurrencePicker);
+			recurrence.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs> (spinner_ItemSelected);
+			var array = Enum.GetValues(typeof(RecurrencePattern)).Cast<RecurrencePattern>();
+
+			var adapter = new ArrayAdapter<RecurrencePattern>(this, Resource.String.app_name, array.ToList<RecurrencePattern>());
+
+				
+			recurrence.Adapter = adapter;
 
 			Button cancelButton = FindViewById<Button> (Resource.Id.CancelButton);
 
@@ -54,6 +67,12 @@ namespace ChoreImpetusAndroid.Activities
 
 
 
+
+		}
+
+		private void spinner_ItemSelected (object sender, AdapterView.ItemSelectedEventArgs e)
+		{
+			Spinner spinner = (Spinner)sender;
 
 		}
 

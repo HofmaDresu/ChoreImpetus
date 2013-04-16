@@ -26,6 +26,40 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/DueDateInput" />
+    <CheckBox
+        android:text="Recurring Chore"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RecurrenceCheckbox" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RecurrenceLayout">
+        <TextView
+            android:text="Recurrence Pattern"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1" />
+        <Spinner
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/RecurrencePicker" />
+        <TextView
+            android:text="End Date"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2" />
+        <EditText
+            android:inputType="date"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/EndDateInput" />
+    </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
