@@ -18,7 +18,12 @@ namespace ChoreImpetusAndroid.Activities
 	[Activity (Label = "Create Chore")]			
 	public class CreateChore : Activity
 	{
-		const int DATE_DIALOG_ID = 0;
+		protected enum DialogIds
+		{
+			DUE_DATE_DIALOG,
+			END_DATE_DIALOG
+		};
+
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -27,12 +32,13 @@ namespace ChoreImpetusAndroid.Activities
 			SetContentView (Resource.Layout.CreateChore);
 
 			var dueDate = FindViewById<EditText>(Resource.Id.DueDateInput);
-			dueDate.Click += (sender, e) => { ShowDialog (DATE_DIALOG_ID); };
-			dueDate.Touch += (sender, e) => { ShowDialog (DATE_DIALOG_ID); };
+			dueDate.Click += (sender, e) => { ShowDialog ((int)DialogIds.DUE_DATE_DIALOG); };
+			dueDate.Touch += (sender, e) => { ShowDialog ((int)DialogIds.DUE_DATE_DIALOG); };
 
-			var endDate = FindViewById<EditText>(Resource.Id.DueDateInput);
-			endDate.Click += (sender, e) => { ShowDialog (DATE_DIALOG_ID); };
-			endDate.Touch += (sender, e) => { ShowDialog (DATE_DIALOG_ID); };
+			var endDate = FindViewById<EditText>(Resource.Id.EndDateInput);
+			endDate.Click += (sender, e) => { ShowDialog ((int)DialogIds.END_DATE_DIALOG); };
+			endDate.Touch += (sender, e) => { ShowDialog ((int)DialogIds.END_DATE_DIALOG); };
+			endDate.Enabled = false;
 
 
 			var recurrence = FindViewById<Spinner>(Resource.Id.RecurrencePicker);
@@ -53,48 +59,86 @@ namespace ChoreImpetusAndroid.Activities
 
 			Button createButton = FindViewById<Button> (Resource.Id.CreateButton);
 
-			createButton.Click += (sender, e) => {
-				var choreName = FindViewById<EditText>(Resource.Id.ChoreNameInput);
+			createButton.Click += CreateButtonClicked;
+		}
 
-				var c = new Chore() {
-					ChoreName = choreName.Text,
-					DueDate = DateTime.Parse(dueDate.Text)
-				};
-				ChoreManager.SaveChore(c);
+		private void CreateButtonClicked(Object sender, EventArgs e)
+		{
+			var choreName = FindViewById<EditText>(Resource.Id.ChoreNameInput);
+			var dueDate = FindViewById<EditText>(Resource.Id.DueDateInput);
+			var endDate = FindViewById<EditText>(Resource.Id.EndDateInput);
+			var recurrencePicker = FindViewById<Spinner>(Resource.Id.RecurrencePicker);
 
-
-				StartActivity(typeof(MainActivity));
+			var c = new Chore() {
+				ChoreName = choreName.Text,
+				DueDate = DateTime.Parse(dueDate.Text)
 			};
+			var choreId = ChoreManager.SaveChore(c);
 
+			if ((RecurrencePattern)recurrencePicker.SelectedItemId != RecurrencePattern.OneTime) {
+				DateTime endRecurrence;
+				
+				var recurrence = new Recurrence()
+				{
+					ChoreID = choreId,
+					EndDate = DateTime.TryParse(endDate.Text, out endRecurrence) ? endRecurrence : (DateTime?)null,
+					Pattern = (RecurrencePattern)recurrencePicker.SelectedItemId,
+					StartDate = DateTime.Parse(dueDate.Text)
+				};
 
-
-
+				var recurrenceId = RecurrenceManager.SaveRecurrence(recurrence);
+			}
+			
+			
+			StartActivity(typeof(MainActivity));
 		}
 
 		private void spinner_ItemSelected (object sender, AdapterView.ItemSelectedEventArgs e)
 		{
+			var recurrence = FindViewById<Spinner>(Resource.Id.RecurrencePicker);
+			var endDate = FindViewById<EditText>(Resource.Id.EndDateInput);
 			Spinner spinner = (Spinner)sender;
-
+			if ((RecurrencePattern)spinner.SelectedItemId == RecurrencePattern.OneTime) {
+				endDate.Text = String.Empty;
+				endDate.Enabled = false;
+			}
+			else {
+				endDate.Enabled = true;
+			}
 		}
 
-		void OnDateSet (object sender, DatePickerDialog.DateSetEventArgs e)
+		void OnDueDateSet (object sender, DatePickerDialog.DateSetEventArgs e)
 		{
 			var dueDate = FindViewById<EditText>(Resource.Id.DueDateInput);
 			dueDate.Text = e.Date.ToShortDateString();
+		}
+		
+		void OnEndDateSet (object sender, DatePickerDialog.DateSetEventArgs e)
+		{
+			var endDate = FindViewById<EditText>(Resource.Id.EndDateInput);
+			endDate.Text = e.Date.ToShortDateString();
 		}
 
 		protected override Dialog OnCreateDialog (int id)
 		{
 			switch (id) {
-				case DATE_DIALOG_ID:
+				case (int)DialogIds.DUE_DATE_DIALOG:
 					DateTime dueDate;
 					if( !(DateTime.TryParse(FindViewById<EditText>(Resource.Id.DueDateInput).Text, out dueDate)))
 					{
 						dueDate = DateTime.Now;
 					}
-					return new DatePickerDialog (this, OnDateSet, dueDate.Year, dueDate.Month - 1, dueDate.Day); 
+					return new DatePickerDialog (this, OnDueDateSet, dueDate.Year, dueDate.Month - 1, dueDate.Day); 
+				case (int)DialogIds.END_DATE_DIALOG:
+					DateTime endDate;
+					if(!(DateTime.TryParse(FindViewById<EditText>(Resource.Id.EndDateInput).Text, out endDate)))
+					{
+						endDate = DateTime.Now;
+					}
+					return new DatePickerDialog (this, OnEndDateSet, endDate.Year, endDate.Month - 1, endDate.Day); 
+				default:
+					throw new Exception("Dialog type not supported");
 			}
-			return null;
 		}
 	}
 }

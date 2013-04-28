@@ -2,7 +2,7 @@ using System;
 using ChoreImpetus.Core.Android.DatabaseObjects;
 using RecurrenceImpetus.Core.Android.Repositories;
 
-namespace RecurrenceImpetus.Core.Android
+namespace ChoreImpetus.Core.Android.BusinessLogic
 {
 	public static class RecurrenceManager
 	{
