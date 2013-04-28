@@ -53,40 +53,43 @@ namespace ChoreImpetus.Core.Android.BusinessLogic
 		private static DateTime? CalculateNextDueDate(Chore c, Recurrence r)
 		{
 			DateTime? nextDate = null;
-			switch (r.Pattern) 
-			{
-				case RecurrencePattern.Daily:
-					nextDate = c.DueDate;
-					while (nextDate.Value.Date <= DateTime.Now.Date) {
-						nextDate = nextDate.Value.AddDays(1);
-					}
+			DateTime today = DateTime.Now.Date;
+			DateTime baseNextDate = (c.DueDate.Date < today) ? today : c.DueDate.Date;
+			if (r != null) {
+				switch (r.Pattern) 
+				{
+					case RecurrencePattern.Daily:
+						nextDate = c.DueDate;
+						while (nextDate.Value.Date <= baseNextDate) {
+							nextDate = nextDate.Value.AddDays(1);
+						}
+						break;
+					case RecurrencePattern.Weekly:
+						nextDate = c.DueDate;
+						while (nextDate.Value.Date <= baseNextDate) {
+							nextDate = nextDate.Value.AddDays(7);
+						}
 					break;
-				case RecurrencePattern.Weekly:
-					nextDate = c.DueDate;
-					while (nextDate.Value.Date <= DateTime.Now.Date) {
-						nextDate = nextDate.Value.AddDays(7);
-					}
-				break;
-				case RecurrencePattern.BiWeekly:
-					nextDate = c.DueDate;
-					while (nextDate.Value.Date <= DateTime.Now.Date) {
-						nextDate = nextDate.Value.AddDays(14);
-					}
-					break;
-				case RecurrencePattern.Monthly:
-					nextDate = c.DueDate;
-					while (nextDate.Value.Date <= DateTime.Now.Date) {
-						nextDate = nextDate.Value.AddMonths(1);
-					}
-					break;
-				case RecurrencePattern.Yearly:
-					nextDate = c.DueDate;
-					while (nextDate.Value.Date <= DateTime.Now.Date) {
-						nextDate = nextDate.Value.AddYears(1);
-					}
-					break;
+					case RecurrencePattern.BiWeekly:
+						nextDate = c.DueDate;
+						while (nextDate.Value.Date <= baseNextDate) {
+							nextDate = nextDate.Value.AddDays(14);
+						}
+						break;
+					case RecurrencePattern.Monthly:
+						nextDate = c.DueDate;
+						while (nextDate.Value.Date <= baseNextDate) {
+							nextDate = nextDate.Value.AddMonths(1);
+						}
+						break;
+					case RecurrencePattern.Yearly:
+						nextDate = c.DueDate;
+						while (nextDate.Value.Date <= baseNextDate) {
+							nextDate = nextDate.Value.AddYears(1);
+						}
+						break;
+				}
 			}
-
 			return nextDate;
 		}
 	}

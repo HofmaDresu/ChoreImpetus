@@ -75,20 +75,19 @@ namespace ChoreImpetusAndroid.Activities
 			};
 			var choreId = ChoreManager.SaveChore(c);
 
-			if ((RecurrencePattern)recurrencePicker.SelectedItemId != RecurrencePattern.OneTime) {
-				DateTime endRecurrence;
-				
-				var recurrence = new Recurrence()
-				{
-					ChoreID = choreId,
-					EndDate = DateTime.TryParse(endDate.Text, out endRecurrence) ? endRecurrence : (DateTime?)null,
-					Pattern = (RecurrencePattern)recurrencePicker.SelectedItemId,
-					StartDate = DateTime.Parse(dueDate.Text)
-				};
-
-				var recurrenceId = RecurrenceManager.SaveRecurrence(recurrence);
-			}
+			DateTime endRecurrence;
 			
+			var recurrence = new Recurrence()
+			{
+				ChoreID = choreId,
+				EndDate = DateTime.TryParse(endDate.Text, out endRecurrence) ? endRecurrence : (DateTime?)null,
+				Pattern = (RecurrencePattern)recurrencePicker.SelectedItemId,
+				StartDate = DateTime.Parse(dueDate.Text)
+			};
+
+			var recurrenceId = RecurrenceManager.SaveRecurrence(recurrence);
+			c.RecurrenceID = recurrenceId;
+			ChoreManager.SaveChore(c);			
 			
 			StartActivity(typeof(MainActivity));
 		}

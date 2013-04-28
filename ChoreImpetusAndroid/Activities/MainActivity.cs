@@ -28,6 +28,7 @@ namespace ChoreImpetusAndroid.Activities
 			ListView choreList = FindViewById<ListView> (Resource.Id.ChoreList);
 
 			choreList.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {};
+			choreList.ItemLongClick += OnItemLongClick;
 
 			// Get our button from the layout resource,
 			// and attach an event to it
@@ -36,6 +37,12 @@ namespace ChoreImpetusAndroid.Activities
 			button.Click += (sender, e) => {
 				StartActivity(typeof(CreateChore));
 			};
+		}
+
+		private void OnItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
+		{
+			ChoreManager.CompleteChore(ChoreManager.GetChores().OrderBy(c => c.DueDate).ToList()[(int)e.Id].ID);
+			RefreshChores();
 		}
 
 		protected override void OnResume()

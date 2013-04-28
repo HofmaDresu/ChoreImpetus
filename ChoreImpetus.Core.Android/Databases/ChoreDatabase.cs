@@ -35,8 +35,7 @@ namespace ChoreImpetus.Core.Android.Databases
 		{
 			lock (locker) {
 				return (from i in Table<T> ()
-				        where i.ID == id
-				        select i).FirstOrDefault ();
+				        select i).ToList ().Where(i => i.ID == id).FirstOrDefault ();
 			}
 		}
 		
