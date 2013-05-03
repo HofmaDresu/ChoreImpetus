@@ -53,6 +53,8 @@ namespace ChoreImpetusAndroid.Activities
 			var adapter = new ArrayAdapter<RecurrencePattern>(this, Android.Resource.Layout.SimpleSpinnerItem, array.ToList<RecurrencePattern>());
 			adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
 
+			recurrence.Adapter = adapter;
+
 			Button cancelButton = FindViewById<Button> (Resource.Id.CancelButton);
 			
 			cancelButton.Click += (sender, e) => {
