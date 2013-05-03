@@ -2,8 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ChoreImpetusAndroid\Activities\MainActivity.cs">
     <Files>
-      <File FileName="ChoreImpetusAndroid\Activities\MainActivity.cs" Line="29" Column="4" />
-      <File FileName="ChoreImpetus.Core.Android\BusinessLogic\ChoreManager.cs" Line="38" Column="34" />
+      <File FileName="ChoreImpetusAndroid\Activities\MainActivity.cs" Line="32" Column="64" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -30,9 +29,11 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint hitAction="PrintExpression" traceExpression="{_bindings}" file="c:\Users\HofmaDresu\Documents\GitHub\ChoreImpetus\ChoreImpetus.Core.Android\SQLite.cs" line="1892" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ChoreImpetusAndroid MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" AndroidDeviceId-Release="emulator-5554" AndroidDeviceId-Debug="emulator-5554" />
   <MonoDevelop.Ide.ItemProperties.ChoreImpetus.Core.Android AndroidDeviceId-Debug="emulator-5554" />
-  <MonoDevelop.Ide.ItemProperties.ChoreImpetusAndroid MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" AndroidDeviceId-Release="emulator-5554" />
 </Properties>

@@ -66,8 +66,8 @@ namespace ChoreImpetusAndroid
 			// aapt resource value: 0x7f05000b
 			public const int CancelButton = 2131034123;
 			
-			// aapt resource value: 0x7f05000d
-			public const int ChoreList = 2131034125;
+			// aapt resource value: 0x7f05000f
+			public const int ChoreList = 2131034127;
 			
 			// aapt resource value: 0x7f050003
 			public const int ChoreNameInput = 2131034115;
@@ -78,11 +78,17 @@ namespace ChoreImpetusAndroid
 			// aapt resource value: 0x7f05000c
 			public const int CreateButton = 2131034124;
 			
+			// aapt resource value: 0x7f05000d
+			public const int DeleteButton = 2131034125;
+			
 			// aapt resource value: 0x7f050005
 			public const int DueDateInput = 2131034117;
 			
 			// aapt resource value: 0x7f050004
 			public const int DueDateLabel = 2131034116;
+			
+			// aapt resource value: 0x7f05000e
+			public const int EditButton = 2131034126;
 			
 			// aapt resource value: 0x7f050009
 			public const int EndDateInput = 2131034121;
@@ -93,8 +99,8 @@ namespace ChoreImpetusAndroid
 			// aapt resource value: 0x7f050001
 			public const int dueDate = 2131034113;
 			
-			// aapt resource value: 0x7f05000e
-			public const int myButton = 2131034126;
+			// aapt resource value: 0x7f050010
+			public const int myButton = 2131034128;
 			
 			// aapt resource value: 0x7f050000
 			public const int name = 2131034112;
@@ -125,7 +131,10 @@ namespace ChoreImpetusAndroid
 			public const int CreateChore = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int Main = 2130903042;
+			public const int EditChore = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int Main = 2130903043;
 			
 			static Layout()
 			{

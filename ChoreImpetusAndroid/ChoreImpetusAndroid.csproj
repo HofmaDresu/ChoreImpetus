@@ -50,6 +50,7 @@
     <Compile Include="Adapters\ChoreListAdapter.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\CreateChore.cs" />
+    <Compile Include="Activities\EditChore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -62,6 +63,7 @@
     <AndroidResource Include="Resources\drawable\Icon.png" />
     <AndroidResource Include="Resources\layout\ChoreListItem.axml" />
     <AndroidResource Include="Resources\layout\CreateChore.axml" />
+    <AndroidResource Include="Resources\layout\EditChore.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

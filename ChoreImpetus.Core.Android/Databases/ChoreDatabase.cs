@@ -54,7 +54,7 @@ namespace ChoreImpetus.Core.Android.Databases
 		public int DeleteItem<T>(int id) where T : Contracts.IDatabaseEntity, new ()
 		{
 			lock (locker) {
-				return Delete<T> (id );
+				return Delete<T> (id);
 			}
 		}
 	}

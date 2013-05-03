@@ -41,7 +41,7 @@ namespace ChoreImpetus.Core.Android.BusinessLogic
 			var completed = new CompletedChore(chore, DateTime.Now);
 			ChoreRepository.SaveCompletedChore(completed);
 
-			if (nextDueDate.HasValue && nextDueDate.Value <= recurrence.EndDate) {
+			if (nextDueDate.HasValue && nextDueDate.Value <= recurrence.EndDate.GetValueOrDefault(new DateTime(9999, 12, 31))) {
 				chore.DueDate = nextDueDate.Value;
 				return SaveChore(chore);
 			}
