@@ -1,9 +1,10 @@
 ﻿<Properties GitUserInfo="UsingMD">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ChoreImpetus.Core.Android\BusinessLogic\ChoreManager.cs">
     <Files>
-      <File FileName="ChoreImpetusAndroid\Activities\EditChore.cs" Line="54" Column="75" />
-      <File FileName="ChoreImpetusAndroid\Activities\CreateChore.cs" Line="49" Column="4" />
+      <File FileName="ChoreImpetusAndroid\Activities\EditChore.cs" Line="1" Column="1" />
+      <File FileName="ChoreImpetusAndroid\Activities\CreateChore.cs" Line="1" Column="1" />
+      <File FileName="ChoreImpetus.Core.Android\BusinessLogic\ChoreManager.cs" Line="24" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,10 +15,8 @@
             <Node name="DataObjects" expanded="True" />
             <Node name="Repositories" expanded="True" />
           </Node>
-          <Node name="ChoreImpetusAndroid" expanded="True">
-            <Node name="Activities" expanded="True">
-              <Node name="EditChore.cs" selected="True" />
-            </Node>
+          <Node name="ChoreImpetusAndroid" expanded="True" selected="True">
+            <Node name="Activities" expanded="True" />
             <Node name="Adapters" expanded="True" />
             <Node name="Assets" expanded="True" />
             <Node name="Properties" expanded="True" />
@@ -32,11 +31,10 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint hitAction="PrintExpression" traceExpression="{_bindings}" file="c:\Users\HofmaDresu\Documents\GitHub\ChoreImpetus\ChoreImpetus.Core.Android\SQLite.cs" line="1892" column="1" />
-      <Breakpoint file="C:\Projects\GitHub\X by 2\ChoreImpetus\ChoreImpetusAndroid\Activities\EditChore.cs" line="49" column="1" />
-      <Breakpoint hitAction="PrintExpression" traceExpression="{adapter}" file="C:\Projects\GitHub\X by 2\ChoreImpetus\ChoreImpetusAndroid\Activities\EditChore.cs" line="53" column="1" />
+      <Breakpoint file="C:\Projects\GitHub\X by 2\ChoreImpetus\ChoreImpetus.Core.Android\BusinessLogic\ChoreManager.cs" line="33" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ChoreImpetusAndroid MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" AndroidDeviceId-Release="emulator-5554" />
   <MonoDevelop.Ide.ItemProperties.ChoreImpetus.Core.Android AndroidDeviceId-Debug="emulator-5554" />
-  <MonoDevelop.Ide.ItemProperties.ChoreImpetusAndroid MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" AndroidDeviceId-Release="emulator-5554" AndroidDeviceId-Debug="emulator-5554" />
 </Properties>

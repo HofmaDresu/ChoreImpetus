@@ -65,6 +65,7 @@ namespace ChoreImpetusAndroid.Activities
 			
 			deleteButton.Click += (sender, e) => {
 				ChoreManager.DeleteChore(choreId);
+				StartActivity(typeof(MainActivity));
 			};
 
 			Button editButton = FindViewById<Button> (Resource.Id.EditButton);
