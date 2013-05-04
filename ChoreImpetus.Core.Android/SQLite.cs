@@ -2053,7 +2053,7 @@ namespace ChoreImpetus.Core.Android
 					if (r == SQLite3.Result.Done) {
 						int rowsAffected = SQLite3.Changes (Connection.Handle);
 						SQLite3.Reset (Statement);
-						return rowsAffected;
+						return (int)SQLite3.LastInsertRowid(Statement);
 					} else if (r == SQLite3.Result.Error) {
 						string msg = SQLite3.GetErrmsg (Connection.Handle);
 						SQLite3.Reset (Statement);
