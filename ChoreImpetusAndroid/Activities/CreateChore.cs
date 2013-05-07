@@ -64,6 +64,7 @@ namespace ChoreImpetusAndroid.Activities
 
 		private void CreateButtonClicked(Object sender, EventArgs e)
 		{
+			FindViewById<Button> (Resource.Id.CreateButton).Enabled = false;
 			var choreName = FindViewById<EditText>(Resource.Id.ChoreNameInput);
 			var dueDate = FindViewById<EditText>(Resource.Id.DueDateInput);
 			var endDate = FindViewById<EditText>(Resource.Id.EndDateInput);
