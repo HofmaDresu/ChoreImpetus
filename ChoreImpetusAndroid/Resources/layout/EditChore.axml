@@ -67,7 +67,7 @@
     </LinearLayout>
     <Button
         android:text="Edit"
-        android:layout_width="215px"
-        android:layout_height="75px"
+        android:layout_width="154dp"
+        android:layout_height="50dp"
         android:id="@+id/EditButton" />
 </LinearLayout>
