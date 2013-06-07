@@ -1,11 +1,10 @@
 ﻿<Properties GitUserInfo="UsingMD">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ChoreImpetusAndroid\Activities\EditChore.cs">
     <Files>
-      <File FileName="ChoreImpetus.Core.Android\Repositories\BaseRepository.cs" Line="32" Column="31" />
-      <File FileName="ChoreImpetus.Core.Android\Repositories\EditChore.cs" Line="29" Column="34" />
-      <File FileName="ChoreImpetus.Core.Android\DataObjects\CompletedChore.cs" Line="15" Column="58" />
-      <File FileName="ChoreImpetusAndroid\Activities\EditChore.cs" Line="20" Column="35" />
+      <File FileName="ChoreImpetus.Core.Android\Repositories\BaseRepository.cs" Line="1" Column="1" />
+      <File FileName="ChoreImpetus.Core.Android\DataObjects\CompletedChore.cs" Line="1" Column="1" />
+      <File FileName="ChoreImpetusAndroid\Activities\EditChore.cs" Line="14" Column="37" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -35,6 +34,6 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.ChoreImpetusAndroid MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" AndroidDeviceId-Release="emulator-5554" AndroidDeviceId-Debug="emulator-5554" />
   <MonoDevelop.Ide.ItemProperties.ChoreImpetus.Core.Android AndroidDeviceId-Debug="emulator-5554" />
+  <MonoDevelop.Ide.ItemProperties.ChoreImpetusAndroid MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" AndroidDeviceId-Release="emulator-5554" AndroidDeviceId-Debug="emulator-5554" />
 </Properties>

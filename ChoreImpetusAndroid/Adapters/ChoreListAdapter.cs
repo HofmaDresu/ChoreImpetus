@@ -62,12 +62,15 @@ namespace ChoreImpetusAndroid.Adapters
 			if (item.DueDate.Date < DateTime.Now.Date) {
 				name.SetTextColor(new Color(255, 0, 0));
 				description.SetTextColor(new Color(255, 0, 0));
-			}
+			} else 
 
 			//Color if Due Today
 			if (item.DueDate.Date == DateTime.Now.Date) {
 				name.SetTextColor(new Color(255, 165, 0));
 				description.SetTextColor(new Color(255, 165, 0));
+			} else {
+				name.SetTextColor(new Color(255, 255, 255));
+				description.SetTextColor(new Color(255, 255, 255));
 			}
 
 			//Finally return the view
