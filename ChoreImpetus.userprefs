@@ -1,14 +1,12 @@
 ﻿<Properties GitUserInfo="UsingMD">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ChoreImpetusAndroid\Activities\EditChore.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ChoreImpetusAndroid\Adapters\ChoreListAdapter.cs">
     <Files>
-      <File FileName="ChoreImpetus.Core.Android\Repositories\BaseRepository.cs" Line="1" Column="1" />
-      <File FileName="ChoreImpetus.Core.Android\DataObjects\CompletedChore.cs" Line="1" Column="1" />
-      <File FileName="ChoreImpetusAndroid\Activities\EditChore.cs" Line="14" Column="37" />
+      <File FileName="ChoreImpetusAndroid\Adapters\ChoreListAdapter.cs" Line="67" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True">
+        <State expanded="True" selected="True">
           <Node name="ChoreImpetus.Core.Android" expanded="True">
             <Node name="BusinessLogic" expanded="True" />
             <Node name="Databases" expanded="True" />
@@ -16,13 +14,7 @@
             <Node name="Repositories" expanded="True" />
           </Node>
           <Node name="ChoreImpetusAndroid" expanded="True">
-            <Node name="Activities" expanded="True">
-              <Node name="EditChore.cs" selected="True" />
-            </Node>
-            <Node name="Resources" expanded="True">
-              <Node name="layout" expanded="True" />
-              <Node name="values" expanded="True" />
-            </Node>
+            <Node name="Adapters" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -35,5 +27,5 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.ChoreImpetus.Core.Android AndroidDeviceId-Debug="emulator-5554" />
-  <MonoDevelop.Ide.ItemProperties.ChoreImpetusAndroid MonoForAntroid.PreferredDevice="3.7in WVGA (Nexus One)" AndroidDeviceId-Release="emulator-5554" AndroidDeviceId-Debug="emulator-5554" />
+  <MonoDevelop.Ide.ItemProperties.ChoreImpetusAndroid AndroidDeviceId-Debug="emulator-5554" />
 </Properties>

@@ -17,6 +17,11 @@ namespace ChoreImpetus.Core.Android.BusinessLogic
 		{
 			return ChoreRepository.GetChore(id);
 		}
+
+		public static IList<Chore> GetTopChores(int count)
+		{
+			return GetChores ().OrderBy (c => c.DueDate).Take (count);
+		}
 		
 		public static IList<Chore> GetChores ()
 		{
